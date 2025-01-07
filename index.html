@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAI YOU Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 150px;
+            font-family: Arial, sans-serif;
+        }
+
+        .logo {
+            font-family: 'Fredoka One', cursive;
+            font-size: 90px;
+            margin-bottom: 40px;
+        }
+
+        .logo span:nth-child(1) { color: #4285f4; }  /* N */
+        .logo span:nth-child(2) { color: #ea4335; }  /* A */
+        .logo span:nth-child(3) { color: #fbbc05; }  /* I */
+        .logo span:nth-child(4) { color: #4285f4; }  /* Y */
+        .logo span:nth-child(5) { color: #34a853; }  /* O */
+        .logo span:nth-child(6) { color: #ea4335; }  /* U */
+
+        #search-box {
+            width: 600px;
+            height: 44px;
+            padding: 0 20px;
+            font-size: 16px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            outline: none;
+        }
+
+        #search-box:hover,
+        #search-box:focus {
+            box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+            border-color: rgba(223,225,229,0);
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <span>N</span><span>A</span><span>I</span>
+        <span>Y</span><span>O</span><span>U</span>
+    </div>
+    <div class="search-container">
+        <input type="text" id="search-box" placeholder="搜索">
+    </div>
+
+    <!-- 添加搜索功能的 JavaScript -->
+    <script>
+        document.getElementById('search-box').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = this.value;
+                if (searchTerm) {
+                    // 使用 Google 搜索
+                    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchTerm)}`;
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

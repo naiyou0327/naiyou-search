@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAI YOU Search</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥛</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <style>
         body {
@@ -55,13 +56,11 @@
         <input type="text" id="search-box" placeholder="搜索">
     </div>
 
-    <!-- 添加搜索功能的 JavaScript -->
     <script>
         document.getElementById('search-box').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 const searchTerm = this.value;
                 if (searchTerm) {
-                    // 使用 Google 搜索
                     window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchTerm)}`;
                 }
             }
